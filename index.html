@@ -189,54 +189,6 @@ Interactively Guiding Language Models - Kwan Ho Ryan Chan, Yuyan Ge, Edgar Dobri
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <main id="main-content">
   <section class="hero">
     <div class="hero-body">
@@ -249,44 +201,56 @@ Interactively Guiding Language Models</h1>
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Kwan Ho Ryan Chan</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                <a href="https://ryanchankh.github.io/" target="_blank">Kwan Ho Ryan Chan</a>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <span class="author-block">
+                      <a target="_blank">Yuyan Ge</a>,</span>
+                      <span class="author-block">
+                        <a target="_blank">Edgar Dobriban</a>,</span>
+                        <span class="author-block">
+                          <a target="_blank">Hamed Hassani</a>,</span>
+                          <span class="author-block">
+                            <a target="_blank">René Vidal</a>
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    
+                    
+                    
                   </span>
                   </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+            <div class="is-size-5 publication-authors">
+              <!-- TODO: Replace with your institution and conference/journal info -->
+              <span class="author-block">University of Pennsylvania<br>NeurIPS 2025</span>
+            </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/abs/2507.03279" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                    <!-- TODO: Update with your arXiv paper ID -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2507.03279" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section
+              
+
+                    <!-- TODO: Add your supplementary material PDF or remove this section -->
                     <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      <a href="https://neurips.cc/virtual/2025/poster/115262" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
+                        <i class=""></i>
                       </span>
-                      <span>Supplementary</span>
+                      <span>neurips.cc</span>
                     </a>
-                  </span> -->
+                  </span>
 
                   <!-- TODO: Replace with your GitHub repository URL -->
                   <span class="link-block">
@@ -300,13 +264,7 @@ Interactively Guiding Language Models</h1>
                 </span>
 
                 <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2507.03279" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
+              
                 </a>
               </span>
             </div>
@@ -326,7 +284,7 @@ Interactively Guiding Language Models</h1>
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            A significant use case of instruction-finetuned Large Language Models (LLMs) is to solve question-answering tasks interactively. In this setting, an LLM agent is tasked with making a prediction by sequentially querying relevant information from the user, as opposed to a single-turn conversation. This paper explores sequential querying strategies that aim to minimize the expected number of queries. One such strategy is Information Pursuit (IP), a greedy algorithm that at each iteration selects the query that maximizes information gain or equivalently minimizes uncertainty. However, obtaining accurate estimates of mutual information or conditional entropy for LLMs is very difficult in practice due to over- or under-confident LLM probabilities, which leads to suboptimal query selection and predictive performance. To better estimate the uncertainty at each iteration, we propose \emph{Conformal Information Pursuit (C-IP)}, an alternative approach to sequential information gain based on conformal prediction sets. More specifically, C-IP leverages a relationship between prediction sets and conditional entropy at each iteration to estimate uncertainty based on the average size of conformal prediction sets. In contrast to conditional entropy, we find that conformal prediction sets are a distribution-free and robust method of measuring uncertainty. Experiments with 20 Questions show that C-IP obtains better predictive performance and shorter query-answer chains compared to previous approaches to IP and uncertainty-based chain-of-thought methods. Furthermore, extending to an interactive medical setting between a doctor and a patient on the MediQ dataset, C-IP achieves competitive performance with direct single-turn prediction while offering greater interpretability.
+            A significant use case of instruction-finetuned Large Language Models (LLMs) is to solve question-answering tasks interactively. In this setting, an LLM agent is tasked with making a prediction by sequentially querying relevant information from the user, as opposed to a single-turn conversation. This paper explores sequential querying strategies that aim to minimize the expected number of queries. One such strategy is Information Pursuit (IP), a greedy algorithm that at each iteration selects the query that maximizes information gain or equivalently minimizes uncertainty. However, obtaining accurate estimates of mutual information or conditional entropy for LLMs is very difficult in practice due to over- or under-confident LLM probabilities, which leads to suboptimal query selection and predictive performance. To better estimate the uncertainty at each iteration, we propose <strong>Conformal Information Pursuit (C-IP)</strong>, an alternative approach to sequential information gain based on conformal prediction sets. More specifically, C-IP leverages a relationship between prediction sets and conditional entropy at each iteration to estimate uncertainty based on the average size of conformal prediction sets. In contrast to conditional entropy, we find that conformal prediction sets are a distribution-free and robust method of measuring uncertainty. Experiments with 20 Questions show that C-IP obtains better predictive performance and shorter query-answer chains compared to previous approaches to IP and uncertainty-based chain-of-thought methods. Furthermore, extending to an interactive medical setting between a doctor and a patient on the MediQ dataset, C-IP achieves competitive performance with direct single-turn prediction while offering greater interpretability.
           </p>
         </div>
       </div>
@@ -334,109 +292,6 @@ Interactively Guiding Language Models</h1>
   </div>
 </section>
 <!-- End paper abstract -->
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
 
 <!-- Paper poster -->
 <section class="hero is-small is-light">
@@ -465,12 +320,11 @@ Interactively Guiding Language Models</h1>
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+      <pre id="bibtex-code"><code>@article{chan2025conformal,
+  title={Conformal information pursuit for interactively guiding large language models},
+  author={Chan, Kwan Ho Ryan and Ge, Yuyan and Dobriban, Edgar and Hassani, Hamed and Vidal, Ren{\'e}},
+  journal={arXiv preprint arXiv:2507.03279},
+  year={2025}
 }</code></pre>
     </div>
 </section>
