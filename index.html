@@ -292,7 +292,173 @@ Interactively Guiding Language Models</h1>
   </div>
 </section>
 <!-- End paper abstract -->
+ 
+<!-- Paper Summary -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="two-col-703 columns is-vcentered" style="align-items:stretch;">
+      <!-- Text column (70%) -->
+      <div class="column" style="flex: 0 0 70%; max-width: 70%;">
+        <h1 class="title">High-Level Summary</h1>
+        <h3 class="title is-4">Interactive Question Answering with LLMs</h3> 
+        <div class="content">
+          <p>
+            Imagine the setting where a doctor is trying to diagnose a patient. In contrast to typical question answering (QA) setting, the information necessary to make a confident prediction may not be all readily available at once. Instead, the doctor is required to ask a short sequence of informative questions about the patient in order to make a proper diagnosis. 
 
+            Our setting focuses on interactive question answering tasks with LLMs, where an LLM asks questions in the order of <i>information gain about the task</i>. That is, LLM sequentially ask queries that reduces the most uncertainty at each iteration. To implement this, we propose an information-theoretic framework called <b>Information Pursuit (IP)</b>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image column (30%) -->
+      <div class="column" style="flex: 0 0 30%; max-width: 30%;">
+        <figure class="image" aria-hidden="false" role="img" style="margin:0;">
+          <img src="static/images/teaser.png" alt="Illustration of interactive querying and conformal sets" style="width:100%; height:auto; border-radius:8px; box-shadow:none;">
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Make the 70/30 layout responsive: stack on small screens */
+    .two-col-703 .image img { display:block; }
+    @media (max-width: 768px) {
+      .two-col-703 .column {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+      }
+      .two-col-703 { flex-direction: column; }
+      .two-col-703 .column + .column { margin-top: 1rem; }
+    }
+  </style>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="two-col-703 columns is-vcentered" style="align-items:stretch;">
+      <!-- Image column (30%) -->
+      <div class="column" style="flex: 0 0 30%; max-width: 30%;">
+        <figure class="image" aria-hidden="false" role="img" style="margin:0;">
+          <img src="static/images/teaser_calibration.png" alt="Illustration of interactive querying and conformal sets" style="width:100%; height:auto; border-radius:8px; box-shadow:none;">
+        </figure>
+      </div>
+
+      <!-- Text column (70%) -->
+      <div class="column" style="flex: 0 0 70%; max-width: 70%;">
+        <h3 class="title is-4">Uncertainty Estimation for LLLMs</h3> 
+        <div class="content">
+          <p>
+            As an information-theoretic framework, IP requires estimating probabilites, which are obtained from LLMs as "next-token probabilites" of the choices (e.g. probability of the token "A"), and estimating mutual information (or entropy) between the task and a query. However,  it is commonly observed that probabilites from LLMs are not well-calibrated; they might be over- or under-confident at times, yielding us poor estimates of mutual information. This subsequently leads to sub-optimal query selection and predictive performance (dashed curve). 
+
+            To address the issue of miscalibrated probabilites, we leverage a distribution-free, finite-sample uncertainty quantification framework called <i>Conformal Prediction</i>. Rather than directly estimating mutual information from entropy, we estimate using the length of the prediction sets. By calibating the measures of uncertainty, we are able to obtain better performance and better measures of uncertainty (solid curve).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Make the 70/30 layout responsive: stack on small screens */
+    .two-col-703 .image img { display:block; }
+    @media (max-width: 768px) {
+      .two-col-703 .column {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+      }
+      .two-col-703 { flex-direction: column; }
+      .two-col-703 .column + .column { margin-top: 1rem; }
+    }
+  </style>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-vcentered" style="align-items:stretch;">
+      <div class="column" style="flex: 0 0 100%; max-width: 100%;">
+        <h3 class="title is-4">Example of Interactive Medical Question Answering</h3>
+        <div class="content">
+          <p>
+            Below we show a more concrete example of medical question answering. Before querying any information, the doctor LLM has accecs to some initial information about the patient, which describes some initial information, the medical question, and the multiple choice options to the question. 
+          </p>
+          <p>
+            Then, based on the information the doctor LLM has access to, the LLM selects the most informative query from a set of possible queries, which in this case is "What is the moisture level of the patient's mucous membranes?". The patient LLM then responds the question "She has dry mucous membranes" (The context is hidden from the doctor).
+          </p>
+          <p>
+            Conditioned on the answer to the first query, the doctor then asks the next most informative query. Then the patient again answers the query. This process continues until the uncertainty estimated from the LLM drops below some user-chosen threshold. Then the doctor makes a final prediction that the answer is <i>D</i>.
+          </p>
+        </div>
+
+        <!-- Image placed below the paragraph as requested -->
+        <figure class="image" aria-hidden="false" role="img" style="margin:0; padding-top:1rem;">
+          <img src="static/images/mediq_example.png" alt="Illustration of interactive querying and conformal sets" style="width:100%; height:auto; border-radius:8px; box-shadow:none;">
+        </figure>
+      </div>
+    </div>
+  </div>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-vcentered" style="align-items:stretch;">
+      <div class="column" style="flex: 0 0 100%; max-width: 100%;">
+        <h3 class="title is-4">Concluding Remarks</h3>
+        <div class="content">
+          <p>For technique details about our method, please refer to Section 2 and 3 of our paper. In our experiments, we consider different settings, including closed query sets (fixed set of possible queries) and open query set (queries sampled from an LLM at each iteration). For our baselines, we compare with state-of-the-art Chain-of-Thought methods such as Uncertainty-of-Thought, as well as baseline probability calibration methods. Our method is also compared on multiple LLMs, and we analyze the calibration results in the appendix. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Ensure stacked layout is responsive */
+    @media (max-width: 768px) {
+      .columns { flex-direction: column; }
+      .column { flex: 0 0 100% !important; max-width: 100% !important; }
+      .column + .column { margin-top: 1rem; }
+    }
+  </style>
+</section>
+
+<!-- Paper poster -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-2">Poster</h2>
+
+      <!-- TODO: Replace with your poster PDF -->
+      <div style="display:flex;justify-content:center;align-items:flex-start;padding-top:1rem;">
+        <iframe
+          src="static/pdfs/NeurIPS2025_Poster_ConformalInformationPursuit.pdf"
+          style="width:100%;max-width:1100px;height:50vh;border:0;"
+          aria-label="Manuscript PDF"
+        ></iframe>
+        
+      </div>
+    </div>
+  </section>
+<!--End paper poster -->
+
+
+<!-- Paper -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-2">Camera-Ready Manuscript</h2>
+
+      <!-- Centered, responsive PDF viewer that fits the viewport -->
+      <div style="display:flex;justify-content:center;align-items:flex-start;padding-top:1rem;">
+        <iframe
+          src="static/pdfs/NeurIPS2025_Paper_Conformal_Information_Pursuit_for_Interactively_Guiding_Large_Language_Models.pdf"
+          style="width:100%;max-width:1100px;height:90vh;border:0;"
+          aria-label="Manuscript PDF"
+        ></iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!--End paper poster -->
 
 
 
@@ -336,10 +502,10 @@ Interactively Guiding Language Models</h1>
 </footer>
 
 <!-- Statcounter tracking code -->
-  
+
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
 
-  </body>
-  </html>
+</body>
+</html>
